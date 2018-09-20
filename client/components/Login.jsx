@@ -1,12 +1,7 @@
 import React from 'react';
+import axios from 'axios';
 
-const userInfo = [
-  {
-    userName: 'Anthony',
-    password: 'password'
-  }
-]
-     
+import Container from './Container.jsx';
 
 class Login extends React.Component {
   constructor(props) {
@@ -14,13 +9,13 @@ class Login extends React.Component {
 
     this.state = {
       user: '',
-      password: ''
-    }
+      password: '',
+      loginMatch: false
+    };
 
     this.setUser = this.setUser.bind(this);
     this.setPassword = this.setPassword.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
-
   }
 
   setUser(event) {
@@ -32,36 +27,39 @@ class Login extends React.Component {
   }
 
   checkLogin() {
-    const{ user, password } = this.state;
-console.log(user)
-    console.log(userInfo[0].userName)
-    if (user === userInfo[0].userName) {
-      console.log(true);
-    } else {
-      console.log(false);
-    }
+    const { user, password } = this.state;
+    const loginInfo = { user, password };
+    console.log('iwas clicked');
+    axios.get('/login', {
+      params: loginInfo,
+    })
+      .then((res) => {
+        if (res.data === true) {
+          this.setState({ loginMatch: true })
+        };
+      }
   }
 
   render() {
     return (
       <div>
         <label>
-          User Name 
-          <br></br>
-          <input onChange={this.setUser}></input>
+          User Name
+          <br />
+          <input onChange={this.setUser} />
         </label>
-        <br></br>
-        <br></br>
+        <br />
+        <br />
         <label>
           password
-          <br></br>
-          <input type="password" onChange={this.setPassword}></input>
+          <br />
+          <input type="password" onChange={this.setPassword} />
         </label>
-        <br></br>
-        <br></br>
-        <button onClick={this.checkLogin}>Login</button>
+        <br />
+        <br />
+        <button type="button" onClick={this.checkLogin}>Login</button>
       </div>
-    )
+    );
   }
 }
 

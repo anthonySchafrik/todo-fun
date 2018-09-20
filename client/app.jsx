@@ -5,6 +5,9 @@ import Login from './components/Login.jsx'
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+
+    };
   }
 
   render() {
@@ -12,9 +15,8 @@ class App extends React.Component {
       <div>
         <Login />
       </div>
-    )
+    );
   }
-
 }
 
-ReactDOM.render( <App />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'));
