@@ -27,17 +27,7 @@ class Login extends React.Component {
   }
 
   checkLogin() {
-    const { user, password } = this.state;
-    const loginInfo = { user, password };
-    console.log('iwas clicked');
-    axios.get('/login', {
-      params: loginInfo,
-    })
-      .then((res) => {
-        if (res.data === true) {
-          this.setState({ loginMatch: true })
-        };
-      }
+    return this;
   }
 
   render() {
