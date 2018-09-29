@@ -1,3 +1,31 @@
 #header{
 text-align: center;
 }
+
+body{
+  background-color: lightgray;
+}
+
+#login{
+  margin: auto;
+  height: 131px;
+  width: 180px;
+  padding: 5px;
+}
+
+#userName{
+  width: 175px;
+}
+
+#password{
+  width: 175px;
+}
+
+#toggleButton{
+  margin-left: 5%;
+}
+
+.todo{
+  margin: auto;
+  width: 75%;
+}

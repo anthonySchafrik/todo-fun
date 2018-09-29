@@ -1,4 +1,7 @@
 import React from 'react';
+import Todos from './Todos.jsx';
+
+// material ui
 
 class Container extends React.Component {
   constructor(props) {
@@ -11,7 +14,7 @@ class Container extends React.Component {
   render() {
     return (
       <div>
-        <h1>Hey got soe stuff on the page</h1>
+        <Todos />
       </div>
     );
   }

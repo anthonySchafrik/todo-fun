@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router } from "@reach/router";
+// import { Router } from "@reach/router";
 
+// material ui
+import Button from '@material-ui/core/Button';
+
+// files
 import Login from './components/Login.jsx';
 import Container from './components/Container.jsx'
 
@@ -23,10 +27,10 @@ class App extends React.Component {
             </p>
           </h1>
         </div>
-        <Router>
-          <Login path="/" />
-          <Container path="/Container" />
-        </Router>
+        <div id="toggleButton">
+          <Button variant="extendedFab">toggle list</Button>
+        </div>
+        <Container />
       </div>
     );
   }

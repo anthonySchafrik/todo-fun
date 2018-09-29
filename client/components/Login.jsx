@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-import { Link, Router } from "@reach/router";
+import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import { Link, Router } from '@reach/router';
 import Container from './Container.jsx';
 
 class Login extends React.Component {
@@ -10,7 +12,7 @@ class Login extends React.Component {
     this.state = {
       user: '',
       password: '',
-      loginMatch: false
+      loginMatch: false,
     };
 
     this.setUser = this.setUser.bind(this);
@@ -32,25 +34,36 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div>
-        <label>
-          User Name
+      <Paper id="login">
+        <div>
+          <label>
+            <br />
+            <input
+              input="text"
+              placeholder="User Name"
+              id="userName"
+              onChange={this.setUser}
+            />
+          </label>
           <br />
-          <input onChange={this.setUser} />
-        </label>
-        <br />
-        <br />
-        <label>
-          password
           <br />
-          <input type="password" onChange={this.setPassword} />
-        </label>
-        <br />
-        <br />
-        <nav>
-          <Link to="/Container">Login</Link>
-        </nav>
-      </div>
+          <label>
+            <br />
+            <input
+              input="text"
+              placeholder="password"
+              id="password"
+              type="password"
+              onChange={this.setPassword}
+            />
+          </label>
+          <br />
+          <br />
+          <nav>
+            <Link to="/Container">Login</Link>
+          </nav>
+        </div>
+      </Paper>
     );
   }
 }
