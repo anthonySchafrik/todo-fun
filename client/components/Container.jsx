@@ -10,8 +10,8 @@ class Container extends React.Component {
 
   render() {
     return (
-      <div style={{ marginTop: 50 }}>
-        log in match
+      <div>
+        <h1>Hey got soe stuff on the page</h1>
       </div>
     );
   }

@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Login from './components/Login.jsx'
+import { Router } from "@reach/router";
+
+import Login from './components/Login.jsx';
+import Container from './components/Container.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -13,7 +16,17 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <Login />
+        <div id="header">
+          <h1>
+            <p>
+              Notes and todos.
+            </p>
+          </h1>
+        </div>
+        <Router>
+          <Login path="/" />
+          <Container path="/Container" />
+        </Router>
       </div>
     );
   }

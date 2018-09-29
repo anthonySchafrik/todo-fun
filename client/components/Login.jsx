@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import { Link, Router } from "@reach/router";
 import Container from './Container.jsx';
 
 class Login extends React.Component {
@@ -47,7 +47,9 @@ class Login extends React.Component {
         </label>
         <br />
         <br />
-        <button type="button" onClick={this.checkLogin}>Login</button>
+        <nav>
+          <Link to="/Container">Login</Link>
+        </nav>
       </div>
     );
   }
