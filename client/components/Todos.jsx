@@ -1,10 +1,13 @@
 import React from 'react';
-import Todo from './Todo.jsx';
 
-// material ui
 import Paper from '@material-ui/core/Paper';
 
-const items = ['running with cats', 'flying with the pigs', 'having a tulte eat from my hand'];
+const items = [
+  'running with cats',
+  'flying with the pigs',
+  'having a tulte eat from my hand',
+  'Read up on making react compnents',
+];
 
 class Todos extends React.Component {
   constructor(props) {
@@ -15,16 +18,12 @@ class Todos extends React.Component {
   }
 
   render() {
-    return (
+    const { todos } = this.state;
+    return todos.map(todo => (
       <div className="todo">
-        <Paper>
-          <ul>
-            <Todo todos={items} />
-          </ul>
-          <button type="button">Delete</button>
-        </Paper>
+        <Paper className="todoPaper">{todo}</Paper>
       </div>
-    );
+    ));
   }
 }
 
