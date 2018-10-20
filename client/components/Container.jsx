@@ -3,7 +3,7 @@ import Header from './Header.jsx';
 import Todos from './Todos.jsx';
 
 const Container = () => (
-  <div>
+  <div style={{maxWidth: "750px"}}>
     <Header />
     <Todos />
   </div>
