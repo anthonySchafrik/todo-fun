@@ -1,9 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import { Router } from "@reach/router";
-
-// import Login from './components/Login.jsx';
-import Container from './components/Container.jsx';
+import React from "react";
+import ReactDOM from "react-dom";
+import Container from "./components/Container.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +8,6 @@ class App extends React.Component {
     this.state = {};
   }
 
-  // add
   render() {
     return (
       <div>
@@ -21,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));

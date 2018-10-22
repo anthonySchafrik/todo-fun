@@ -1,32 +1,33 @@
-import React from 'react';
+import React from "react";
+import styled from "react-emotion";
+import Paper from "@material-ui/core/Paper";
 
-import Paper from '@material-ui/core/Paper';
+const Wrapper = styled("div")`
+  padding: "5px";
+`;
 
 const items = [
-  'running with cats',
-  'flying with the pigs',
-  'having a turtle eat from my hand',
-  'Read up on making react compnents',
+  "running with cats",
+  "flying with the pigs",
+  "having a turtle eat from my hand",
+  "Read up on making react compnents"
 ];
 
 class Todos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: items,
+      todos: items
     };
   }
 
   render() {
     const { todos } = this.state;
     return todos.map(todo => (
-      <div className="todo" style={{padding: "5px"}}>
-        <Paper className="todoPaper">
-        {todo}
-        <button style={{marginLeft: "80px"}}>Remove</button>
-        </Paper>
-       
-      </div>
+      <Wrapper className="todo">
+        <Paper className="todoPaper">{todo}</Paper>
+        <button>Remove</button>
+      </Wrapper>
     ));
   }
 }
