@@ -6,27 +6,25 @@ const Wrapper = styled("div")`
   padding: "5px";
 `;
 
-const items = [
-  "running with cats",
-  "flying with the pigs",
-  "having a turtle eat from my hand",
-  "Read up on making react compnents"
-];
-
 class Todos extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      todos: items
-    };
+    // this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
   }
 
+  // handleRemoveTodo(e) {
+  //   console.log(e.target.previousSibling.innerText);
+  //   this.props.todos.pop(e.target.previousSibling.innerText);
+  // }
+
   render() {
-    const { todos } = this.state;
+    const { todos, handleRemoveTodo } = this.props;
+    // const { handleRemoveTodo } = this;
+
     return todos.map(todo => (
       <Wrapper key={todo} className="todo">
         <Paper className="todoPaper">{todo}</Paper>
-        <button>Remove</button>
+        <button onClick={handleRemoveTodo}>Remove</button>
       </Wrapper>
     ));
   }
