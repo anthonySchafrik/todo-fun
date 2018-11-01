@@ -4,23 +4,24 @@ class AddTodo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      todo: ""
+      todo: "",
+      todos: []
     };
     this.handleTodo = this.handleTodo.bind(this);
     this.handleAddTodo = this.handleAddTodo.bind(this);
   }
 
   handleTodo(e) {
-    console.log(e.target.value);
+    this.setState({ todo: e.target.value });
   }
 
   handleAddTodo(e) {
-    console.log(e);
+    this.state.todos.push(this.state.todo);
   }
 
   render() {
     const { handleAddTodo, handleTodo } = this;
-
+    console.log(this.state.todos);
     return (
       <div>
         <input onChange={handleTodo} type="text" placeholder="Enter Todo" />

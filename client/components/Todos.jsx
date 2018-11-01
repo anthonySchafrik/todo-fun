@@ -24,7 +24,7 @@ class Todos extends React.Component {
   render() {
     const { todos } = this.state;
     return todos.map(todo => (
-      <Wrapper className="todo">
+      <Wrapper key={todo} className="todo">
         <Paper className="todoPaper">{todo}</Paper>
         <button>Remove</button>
       </Wrapper>
