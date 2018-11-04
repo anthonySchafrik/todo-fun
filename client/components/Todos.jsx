@@ -9,17 +9,14 @@ const Wrapper = styled("div")`
 class Todos extends React.Component {
   constructor(props) {
     super(props);
-    // this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
   }
-
-  // handleRemoveTodo(e) {
-  //   console.log(e.target.previousSibling.innerText);
-  //   this.props.todos.pop(e.target.previousSibling.innerText);
-  // }
 
   render() {
     const { todos, handleRemoveTodo } = this.props;
-    // const { handleRemoveTodo } = this;
+    
+    if (!todos) {
+      return <h1>LOADING...</h1>
+    }
 
     return todos.map(todo => (
       <Wrapper key={todo} className="todo">

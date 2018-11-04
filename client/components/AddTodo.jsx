@@ -13,20 +13,12 @@ class AddTodo extends React.Component {
     this.handleRemoveTodo = this.handleRemoveTodo.bind(this);
   }
 
-  // shouldComponentUpdate(nextProps, nextState) {
-  //   debugger;
-  //   if (this.state.todos.lenght !== nextState.todos.length) {
-  //     return true;
-  //   }
-  //   return false;
-  // }
-
   handleTodo(e) {
     this.setState({ todo: e.target.value });
   }
 
   handleAddTodo(e) {
-    this.state.todos.push(this.state.todo);
+    this.setState({todos: [this.state.todo, ...this.state.todos]});
     this.setState({ todo: " " });
   }
 
